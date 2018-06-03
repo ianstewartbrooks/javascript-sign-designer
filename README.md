@@ -2,7 +2,7 @@
 
 ## Description
 
-This javascript application allows the user to use an interactive designer to create a sign for the front of their house or building. The user has various materials, shapes, fonts and colours and background brick textures to choose whilst designing their sign/plaque.
+This javascript application allows the user to use an interactive designer to create a sign for the front of their house or building. The user has various materials, shapes, fonts, colours and background brick textures to choose whilst designing their sign/plaque.
 
 Once they have finished their design the information (materials chosen, etc) is then saved in the system for someone to actually make the sign/plaque and send it to the customer.
 
