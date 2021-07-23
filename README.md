@@ -10,4 +10,4 @@ I wrote this application using Javascript and JQuery for a job I was doing for a
 
 ## How to view
 
-Clone the repo to your machine and open signdesignerstep1.html in your browser.
+Clone the repo to your machine and open index.html in your browser.
