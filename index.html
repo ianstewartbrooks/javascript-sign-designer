@@ -1,143 +1,148 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link href="signdesigner-styles.css" rel="stylesheet" />
-	<title>Sign Site - Step 1</title>
-	<meta charset="utf-8" />
-	<link href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-	<script src="signdesigner.js"></script>
+  <link href="signdesigner-styles.css" rel="stylesheet"/>
+  <title>Sign Site - Step 1</title>
+  <meta charset="utf-8"/>
+  <link href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script src="signdesigner.js"></script>
 </head>
 <body>
-	<div id="header">
-		Sign Designer - Step One
-	</div>
-	<div id="controls">
-		<div id="form-area" >
-		<form action="signdesignerstep2.php" method="post" onsubmit="return FillHiddenFields()">
-			<div id="mats">
-				<p><input id="acrylic" class="mattype" type="radio" name="material" value="0"/>
-				<label for="acrylic">Acrylic</label></p>
-				<p><input id="aluminium" class="mattype" type="radio" name="material" value="1"/>
-				<label for="aluminium">Aluminium</label></p>
-				<p><input id="brass" class="mattype" type="radio" name="material" value="2" checked />
-				<label for="brass">Brass</label></p>
-				<p><input id="frosted" class="mattype" type="radio" name="material" value="3"/>
-				<label for="frosted">Frosted</label></p>
-				<p><input id="glass" class="mattype" type="radio" name="material" value="4"/>
-				<label for="glass">Glass</label></p>
-				<p><input id="granite" class="mattype" type="radio" name="material" value="5"/>
-				<label for="granite">Granite</label></p>
-				<p><input id="oak" class="mattype" type="radio" name="material" value="6"/>
-				<label for="oak">Oak</label></p>
-				<p><input id="slate" class="mattype" type="radio" name="material" value="7"/>
-				<label for="slate">Slate</label></p>
-			</div>
-			<div id="shapes">
-				<p>Choose a shape:</p>
-			</div>
-			<div id="inscription-area">
-				<p>Enter whatever text you require in the boxes below:</p>
-				<div class="control-row">
-					<div id="colourslist">
-					Colour
-						<select id="selectcolour" name="chosencolour" class="dropdowns">
-							<option value="Colour 1">Colour 1</option>
-							<option value="Colour 2">Colour 2</option>
-							<option value="Colour 3">Colour 3</option>
-						</select>
-					</div>
-					<div id="fontslist">
-						Font
-						<select id="selectfont" name="chosenfont" class="dropdowns">
-							<option value="Fontlist 1">Fontname 1</option>
-							<option value="Fontlist 2">Fontname 2</option>
-							<option value="Fontlist 3">Fontname 3</option>
-						</select>
-					</div>
-				</div>
-				<div class="control-row">
-					<input id="inputbox1" class="ipbox" type="text" name="addressline1" value="House name">
-					<div class="slider-container">
-						<div id="slider-1" class="sliders"></div>
-					</div>
-					<div id="nudge1" class="arrows">
-						<div class="arrL"><img class="arrLimg" src="Sign-Images/Arrows/arrowL.svg" alt="left"></div>
-						<div class="mid">
-							<div class="arrU"><img class="arrUimg" src="Sign-Images/Arrows/arrowU.svg" alt="up"></div>
-							<div class="arrD"><img class="arrDimg" src="Sign-Images/Arrows/arrowD.svg" alt="down"></div>
-						</div>
-						<div class="arrR"><img class="arrRimg" src="Sign-Images/Arrows/arrowR.svg" alt="right"></div>
-					</div>
-				</div>
-				<div class="control-row">
-					<input id="inputbox2" class="ipbox" type="text" name="addressline2" value="53">
-					<div class="slider-container">
-						<div id="slider-2" class="sliders"></div>
-					</div>
-					<div id="nudge2" class="arrows">
-						<div class="arrL"><img class="arrLimg" src="Sign-Images/Arrows/arrowL.svg" alt="left"></div>
-						<div class="mid">
-							<div class="arrU"><img class="arrUimg" src="Sign-Images/Arrows/arrowU.svg" alt="up"></div>
-							<div class="arrD"><img class="arrDimg" src="Sign-Images/Arrows/arrowD.svg" alt="down"></div>
-						</div>
-						<div class="arrR"><img class="arrRimg" src="Sign-Images/Arrows/arrowR.svg" alt="right"></div>
-					</div>
-				</div>
-				<div class="control-row">
-					<input id="inputbox3" class="ipbox" type="text" name="addressline3" value="Street address">
-					<div class="slider-container">
-						<div id="slider-3" class="sliders"></div>
-					</div>
-					<div id="nudge3" class="arrows">
-						<div class="arrL"><img class="arrLimg" src="Sign-Images/Arrows/arrowL.svg" alt="left"></div>
-						<div class="mid">
-							<div class="arrU"><img class="arrUimg" src="Sign-Images/Arrows/arrowU.svg" alt="up"></div>
-							<div class="arrD"><img class="arrDimg" src="Sign-Images/Arrows/arrowD.svg" alt="down"></div>
-						</div>
-						<div class="arrR"><img class="arrRimg" src="Sign-Images/Arrows/arrowR.svg" alt="right"></div>
-					</div>
-				</div>
-			</div>
-			<div id="sendform">
-				<p>Once you have finished designing your house sign press the 'Continue' button below:</p>
-				<p><input type="submit" name="continue" value="Continue"></p>
-				<input type="hidden" id="hiddenmaterialname" name="materialname" value="Brass">
-				<input type="hidden" id="hiddenchosenshape" name="chosenshape" value="0">
-				<input type="hidden" id="hiddentxt1fontsize" name="txt1fontsize" value="0px">
-				<input type="hidden" id="hiddentxt2fontsize" name="txt2fontsize" value="0px">
-				<input type="hidden" id="hiddentxt3fontsize" name="txt3fontsize" value="0px">
-				<input type="hidden" id="hiddentxt1top" name="txt1top" value="0px">
-				<input type="hidden" id="hiddentxt1left" name="txt1left" value="0px">
-				<input type="hidden" id="hiddentxt2top" name="txt2top" value="0px">
-				<input type="hidden" id="hiddentxt2left" name="txt2left" value="0px">
-				<input type="hidden" id="hiddentxt3bottom" name="txt3bottom" value="0px">
-				<input type="hidden" id="hiddentxt3left" name="txt3left" value="0px">
-			</div>
-		</form>
-		</div>
-	</div>
-	<div id="display-area">
-		<div id="design-background-container">
-			<div id="design">
-				<div id="txt1"><p id="text-1">House name</p></div>
-				<div id="txt2"><p id="text-2">53</p></div>
-				<div id="txt3"><p id="text-3">Street address</p></div>
-				<img id="ImgMat" src="Sign-Images/ShapesAndMats/Brass/Brass_08.png" />
-			</div>
-		</div>
-		<div id="design-background-selector">
-			<input type="image" class="bricktype" name="RedBrick" title="Red Brick" src="Sign-Images/Backgrounds/Menu_RedBrick.png" value="RedBrick.png">
-			<input type="image" class="bricktype" name="YellowBrick" title="Yellow Brick" src="Sign-Images/Backgrounds/Menu_YellowBrick.png" value="YellowBrick.png">
-			<input type="image" class="bricktype" name="Render" title="Render" src="Sign-Images/Backgrounds/Menu_Render.png" value="Render.png">
-			<input type="image" class="bricktype" name="Wood" title="Wood" src="Sign-Images/Backgrounds/Menu_Wood.png" value="Wood.png">
-			<input type="image" class="bricktype" name="Concrete" title="Concrete" src="Sign-Images/Backgrounds/Menu_Concrete.png" value="Concrete.png">
-		</div>
-	</div>
-	<div id="footer">
-		<p>Footer</p>
-	</div>
+<div id="header">
+  Sign Designer - Step One
+</div>
+<div id="controls">
+  <div id="form-area">
+    <form action="signdesignerstep2.php" method="post" onsubmit="return FillHiddenFields()">
+      <div id="mats">
+        <p><input id="acrylic" class="mattype" type="radio" name="material" value="0"/>
+          <label for="acrylic">Acrylic</label></p>
+        <p><input id="aluminium" class="mattype" type="radio" name="material" value="1"/>
+          <label for="aluminium">Aluminium</label></p>
+        <p><input id="brass" class="mattype" type="radio" name="material" value="2" checked/>
+          <label for="brass">Brass</label></p>
+        <p><input id="frosted" class="mattype" type="radio" name="material" value="3"/>
+          <label for="frosted">Frosted</label></p>
+        <p><input id="glass" class="mattype" type="radio" name="material" value="4"/>
+          <label for="glass">Glass</label></p>
+        <p><input id="granite" class="mattype" type="radio" name="material" value="5"/>
+          <label for="granite">Granite</label></p>
+        <p><input id="oak" class="mattype" type="radio" name="material" value="6"/>
+          <label for="oak">Oak</label></p>
+        <p><input id="slate" class="mattype" type="radio" name="material" value="7"/>
+          <label for="slate">Slate</label></p>
+      </div>
+      <div id="shapes">
+        <p>Choose a shape:</p>
+      </div>
+      <div id="inscription-area">
+        <p>Enter whatever text you require in the boxes below:</p>
+        <div class="control-row">
+          <div id="colourslist">
+            Colour
+            <select id="selectcolour" name="chosencolour" class="dropdowns">
+              <option value="Colour 1">Colour 1</option>
+              <option value="Colour 2">Colour 2</option>
+              <option value="Colour 3">Colour 3</option>
+            </select>
+          </div>
+          <div id="fontslist">
+            Font
+            <select id="selectfont" name="chosenfont" class="dropdowns">
+              <option value="Fontlist 1">Fontname 1</option>
+              <option value="Fontlist 2">Fontname 2</option>
+              <option value="Fontlist 3">Fontname 3</option>
+            </select>
+          </div>
+        </div>
+        <div class="control-row">
+          <input id="inputbox1" class="ipbox" type="text" name="addressline1" value="House name">
+          <div class="slider-container">
+            <div id="slider-1" class="sliders"></div>
+          </div>
+          <div id="nudge1" class="arrows">
+            <div class="arrL"><img class="arrLimg" src="Sign-Images/Arrows/arrowL.svg" alt="left"></div>
+            <div class="mid">
+              <div class="arrU"><img class="arrUimg" src="Sign-Images/Arrows/arrowU.svg" alt="up"></div>
+              <div class="arrD"><img class="arrDimg" src="Sign-Images/Arrows/arrowD.svg" alt="down"></div>
+            </div>
+            <div class="arrR"><img class="arrRimg" src="Sign-Images/Arrows/arrowR.svg" alt="right"></div>
+          </div>
+        </div>
+        <div class="control-row">
+          <input id="inputbox2" class="ipbox" type="text" name="addressline2" value="53">
+          <div class="slider-container">
+            <div id="slider-2" class="sliders"></div>
+          </div>
+          <div id="nudge2" class="arrows">
+            <div class="arrL"><img class="arrLimg" src="Sign-Images/Arrows/arrowL.svg" alt="left"></div>
+            <div class="mid">
+              <div class="arrU"><img class="arrUimg" src="Sign-Images/Arrows/arrowU.svg" alt="up"></div>
+              <div class="arrD"><img class="arrDimg" src="Sign-Images/Arrows/arrowD.svg" alt="down"></div>
+            </div>
+            <div class="arrR"><img class="arrRimg" src="Sign-Images/Arrows/arrowR.svg" alt="right"></div>
+          </div>
+        </div>
+        <div class="control-row">
+          <input id="inputbox3" class="ipbox" type="text" name="addressline3" value="Street address">
+          <div class="slider-container">
+            <div id="slider-3" class="sliders"></div>
+          </div>
+          <div id="nudge3" class="arrows">
+            <div class="arrL"><img class="arrLimg" src="Sign-Images/Arrows/arrowL.svg" alt="left"></div>
+            <div class="mid">
+              <div class="arrU"><img class="arrUimg" src="Sign-Images/Arrows/arrowU.svg" alt="up"></div>
+              <div class="arrD"><img class="arrDimg" src="Sign-Images/Arrows/arrowD.svg" alt="down"></div>
+            </div>
+            <div class="arrR"><img class="arrRimg" src="Sign-Images/Arrows/arrowR.svg" alt="right"></div>
+          </div>
+        </div>
+      </div>
+      <div id="sendform">
+        <p>Once you have finished designing your house sign press the 'Continue' button below:</p>
+        <p><input type="submit" name="continue" value="Continue"></p>
+        <input type="hidden" id="hiddenmaterialname" name="materialname" value="Brass">
+        <input type="hidden" id="hiddenchosenshape" name="chosenshape" value="0">
+        <input type="hidden" id="hiddentxt1fontsize" name="txt1fontsize" value="0px">
+        <input type="hidden" id="hiddentxt2fontsize" name="txt2fontsize" value="0px">
+        <input type="hidden" id="hiddentxt3fontsize" name="txt3fontsize" value="0px">
+        <input type="hidden" id="hiddentxt1top" name="txt1top" value="0px">
+        <input type="hidden" id="hiddentxt1left" name="txt1left" value="0px">
+        <input type="hidden" id="hiddentxt2top" name="txt2top" value="0px">
+        <input type="hidden" id="hiddentxt2left" name="txt2left" value="0px">
+        <input type="hidden" id="hiddentxt3bottom" name="txt3bottom" value="0px">
+        <input type="hidden" id="hiddentxt3left" name="txt3left" value="0px">
+      </div>
+    </form>
+  </div>
+</div>
+<div id="display-area">
+  <div id="design-background-container">
+    <div id="design">
+      <div id="txt1"><p id="text-1">House name</p></div>
+      <div id="txt2"><p id="text-2">53</p></div>
+      <div id="txt3"><p id="text-3">Street address</p></div>
+      <img id="ImgMat" src="Sign-Images/ShapesAndMats/Brass/Brass_08.png"/>
+    </div>
+  </div>
+  <div id="design-background-selector">
+    <input type="image" class="bricktype" name="RedBrick" title="Red Brick"
+           src="Sign-Images/Backgrounds/Menu_RedBrick.png" value="RedBrick.png">
+    <input type="image" class="bricktype" name="YellowBrick" title="Yellow Brick"
+           src="Sign-Images/Backgrounds/Menu_YellowBrick.png" value="YellowBrick.png">
+    <input type="image" class="bricktype" name="Render" title="Render" src="Sign-Images/Backgrounds/Menu_Render.png"
+           value="Render.png">
+    <input type="image" class="bricktype" name="Wood" title="Wood" src="Sign-Images/Backgrounds/Menu_Wood.png"
+           value="Wood.png">
+    <input type="image" class="bricktype" name="Concrete" title="Concrete"
+           src="Sign-Images/Backgrounds/Menu_Concrete.png" value="Concrete.png">
+  </div>
+</div>
+<div id="footer">
+  <p>Footer</p>
+</div>
 </body>
 </html>
 
